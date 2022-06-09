@@ -1,7 +1,8 @@
 #!/bin/bash
 
+## Update the credentials parameters passed to this.
 ## Request for token
-http POST https://cslab1.netsapiens.com/ns-api/oauth2/token grant_type="password" username="training@deguerto-test" password="CsAWrLwpnpXM4SwGRxmFV49v9mQzqq" client_id="training_id" client_secret="d96e73ecdbb5bb28f1cf699c8bfeef05"
+http POST https://cslab1.netsapiens.com/ns-api/oauth2/token grant_type="password" username="training@deguerto-test" password="" client_id="training_id" client_secret=""
 
 
 ## Read the domain with bearer
@@ -30,8 +31,10 @@ cat t2training-domain.json | jq '.[] | { "domain" : .domain , "user" : "1000", "
 https://api.netsapiens.com/ns-api/?object=cdr2&action=read
 http -vv --session=cslab1 POST https://cslab1.netsapiens.com/ns-api/ object==cdr2 action==read format==json domain==rahz start_date=="2022-06-01 00:00:00" end_date=="2022-06-08 00:00:00"
 
+// get caller_id from cdr table via api,
 https://api.netsapiens.com/ns-api/?object=cdr&action=read&term_callid=""
 
+// read recordings
 https://api.netsapiens.com/ns-api/?object=recording&action=read
 'format' => 'json',
 'object' =>  $this->object,
