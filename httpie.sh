@@ -2,7 +2,7 @@
 
 ## Update the credentials parameters passed to this.
 ## Request for token
-http POST https://cslab1.netsapiens.com/ns-api/oauth2/token grant_type="password" username="training@deguerto-test" password="" client_id="training_id" client_secret=""
+http POST https://cslab1.netsapiens.com/ns-api/oauth2/token grant_type="password" username="training" password="" client_id="training_id" client_secret=""
 
 
 ## Read the domain with bearer

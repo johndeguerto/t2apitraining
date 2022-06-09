@@ -1,2 +1,11 @@
-https://netsapiens.zendesk.com/agent/tickets/74805
+/tickets/74805
 // This is OMP issues but the same logic applies to MVC API
+
+tickets/73529
+// all queue update for the agent
+{{base_url}}/ns-api/?object=agent&action=update&device=sip:1001m@deguerto&queue=400&domain=deguerto&entry_option=immediate&toAsQueue=no&entry_action=make_im
+
+// then you MUST add this additional api call
+{{base_url}}/ns-api/?object=agentlog&action=create&id=1001@deguerto&uid=1001@deguerto&user=1001&domain=deguerto&mode=Auto
+
+Object=Agent uses callqueuescontroller, line 1203, function update($form)
